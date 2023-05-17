@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
     const client = await db.connect();
- 
+    console.log(client)
   try {
     await client.sql`CREATE TABLE Pets ( Name varchar(255), Owner varchar(255) );`;
     const names = ['Fiona', 'Lucy'];
